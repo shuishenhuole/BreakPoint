@@ -1,9 +1,15 @@
 {
   "name": "@shuishenhuole/breakpoint",
   "version": "1.0.0",
-  "description": "Please describe the basic information.",
+  "description": "BreakPoint 是一个专为 HarmonyOS（鸿蒙）应用设计的响应式断点管理工具。它提供了简单优雅的 API，帮助开发者轻松实现基于屏幕宽度的响应式布局。",
   "main": "Index.ets",
-  "author": "",
+  "keywords": [
+    "多端适配",
+    "一次开发多端部署",
+    "响应式断点"
+  ],
+  "homepage": "https://gitcode.com/gcw_RypLVMnR/BreakPoint",
+  "author": "shuishenhuole",
   "license": "Apache-2.0",
   "dependencies": {}
 }
