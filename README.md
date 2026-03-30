@@ -1,32 +1,62 @@
 # BreakPoint
+#### 如何下载
+1. 通过ohpm一键安装
+```bash
+ohpm install @shuishenhuole/breakpoint
+```
+2. 通过文件导入
 
+2.1在build-profile.json5的modules中加入
 ```json
 {
-  "name": "entry",
-  "version": "1.0.0",
-  "description": "Please describe the basic information.",
-  "main": "",
-  "author": "",
-  "license": "",
+  "name": "BreakPoint",
+  "srcPath": "./BreakPoint"
+}
+```
+2.2
+module.json5中加入依赖
+```json
+{
   "dependencies": {
-    "@shuishenhuole/bulletchat": "file:../BulletChat",
     "@shuishenhuole/breakpoint": "file:../BreakPoint"
   }
 }
 ```
-
+#### 使用方法
+1. 在onWindowStageCreate调用BreakPoint.init(windowStage)进行初始化
 ```ts
-  onWindowStageCreate(windowStage: window.WindowStage): void {
-    // Main window is created, set main page for this ability
-    hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+onWindowStageCreate(windowStage: window.WindowStage): void {
+    ...
     BreakPoint.init(windowStage)
-    windowStage.loadContent('pages/Index', (err) => {
-      ZRouter.animateMgr().initSharedAnim(windowStage)
-      if (err.code) {
-        hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
-        return;
-      }
-      hilog.info(DOMAIN, 'testTag', 'Succeeded in loading the content.');
+    ...
     });
+}
+```
+2. 在类中直接使用WidthBreakPoint方法获取数据
+```ts
+#注意这里的实际导入可能会不一样可能是@shuishenhuole/breakpoint不过影响不大
+import { WidthBreakPoint } from '../utils/WidthBreakPoint'
+
+@Entry
+@ComponentV2
+struct Index {
+  build() {
+    Flex({
+      justifyContent:FlexAlign.Center,
+      alignItems:ItemAlign.Center
+    }){
+      Text("Hello World")
+        .fontColor(new WidthBreakPoint<ResourceColor>({
+          sm:Color.Red,
+          md:Color.Orange,
+          lg:Color.Green,
+          xl:Color.Blue,
+          default:Color.Black
+        }).getValue())
+        .fontSize(50)
+    }
+    .height("100%")
+    .width("100%")
   }
+}
 ```
