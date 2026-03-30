@@ -1,2 +1,16 @@
 # BreakPoint
 
+```json
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "Please describe the basic information.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@shuishenhuole/bulletchat": "file:../BulletChat",
+    "@shuishenhuole/breakpoint": "file:../BreakPoint"
+  }
+}
+```
