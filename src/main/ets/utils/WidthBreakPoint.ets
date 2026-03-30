@@ -20,32 +20,15 @@ export class WidthBreakPoint<T>{
   getValue(){
     switch (this.BPS.wBP){
       case WidthBreakpoint.WIDTH_XS:
-        if(this.bp?.xs){
-          return this.bp.xs
-        }
-        break
+        return this.bp?.xs??this.bp?.default
       case WidthBreakpoint.WIDTH_SM:
-        if(this.bp?.sm){
-          return this.bp.sm
-        }
-        break
+        return this.bp?.sm??this.bp?.default
       case WidthBreakpoint.WIDTH_MD:
-        if(this.bp?.md){
-          return this.bp.md
-        }
-        break
+        return this.bp?.md??this.bp?.default
       case WidthBreakpoint.WIDTH_LG:
-        if(this.bp?.lg){
-          return this.bp.lg
-        }
-        break
+        return this.bp?.lg??this.bp?.default
       case WidthBreakpoint.WIDTH_XL:
-        if(this.bp?.xl){
-          return this.bp.xl
-        }
-      default:
-        return this.bp?.default
+        return this.bp?.xl??this.bp?.default
     }
-    return this.bp?.default
   }
 }
