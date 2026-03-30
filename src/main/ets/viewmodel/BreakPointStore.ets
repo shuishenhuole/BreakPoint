@@ -1,4 +1,3 @@
-
 @ObservedV2
 export class BreakPointStore{
   @Trace wBP:WidthBreakpoint = WidthBreakpoint.WIDTH_XS
