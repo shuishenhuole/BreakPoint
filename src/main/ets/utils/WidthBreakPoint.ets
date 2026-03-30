@@ -7,6 +7,7 @@ interface WidthBreakPointType<T>{
   md?:T
   lg?:T
   xl?:T
+  default?:T
 }
 
 export class WidthBreakPoint<T>{
@@ -29,7 +30,7 @@ export class WidthBreakPoint<T>{
       case WidthBreakpoint.WIDTH_XL:
         return this.bp?.xl
       default:
-        return this.bp?.sm
+        return this.bp?.default
     }
   }
 }
