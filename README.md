@@ -84,3 +84,21 @@ struct Index {
   }
 }
 ```
+#### 方法介绍
+new WidthBreakPoint<T>(bp: WidthBreakPointType<T>)
+
+T为定义当前属性的类型
+
+bp - 配置对象，类型为 WidthBreakPointType<T>
+
+xs? - 超小屏（0-320vp）时的值
+
+sm? - 小屏（320-600vp）时的值
+
+md? - 中屏（600-840vp）时的值
+
+lg? - 大屏（840-1440vp）时的值
+
+xl? - 超大屏（1440vp+）时的值
+
+default? - 默认值（当未匹配到断点时使用）
