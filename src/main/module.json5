@@ -1,0 +1,9 @@
+{
+  "module": {
+    "name": "BreakPoint",
+    "type": "har",
+    "deviceTypes": [
+      "default"
+    ]
+  }
+}
