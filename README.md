@@ -84,6 +84,34 @@ struct Index {
   }
 }
 ```
+3.如果你需要保存在变量中使用getValue需要在属性中调用
+```ts
+import { WidthBreakPoint } from '@shuishenhuole/breakpoint'
+
+@Entry
+@ComponentV2
+struct Index {
+  @Local color:WidthBreakPoint<ResourceColor> = new WidthBreakPoint<ResourceColor>({
+    sm:Color.Red,
+    md:Color.Orange,
+    lg:Color.Green,
+    xl:Color.Blue,
+    default:Color.Black
+  })
+  build() {
+    Flex({
+      justifyContent:FlexAlign.Center,
+      alignItems:ItemAlign.Center
+    }){
+      Text("Hello World")
+        .fontColor(this.color.getValue())
+        .fontSize(50)
+    }
+    .height("100%")
+    .width("100%")
+  }
+}
+```
 #### 方法介绍
 new WidthBreakPoint<T>(bp: WidthBreakPointType<T>)
 
